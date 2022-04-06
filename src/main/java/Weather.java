@@ -20,7 +20,7 @@ public class Weather {
         JSONObject jsonObject = new JSONObject(result);
         model.setName(jsonObject.getString("name"));
 
-        JSONObject main = jsonObject.getJSONObject("main"); // получили Json массив main
+        JSONObject main = jsonObject.getJSONObject("main");
         model.setTemp(main.getDouble("temp"));
         model.setHumidity(main.getDouble("humidity"));
 

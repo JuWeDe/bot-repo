@@ -52,7 +52,7 @@ public class Bot extends TelegramLongPollingBot {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(message.getChatId().toString());
-        sendMessage.setReplyToMessageId(message.getMessageId()); // оффни чтобы не отвечал юзеру который делает запрос
+        sendMessage.setReplyToMessageId(message.getMessageId());
         sendMessage.setText(text);
         try {
             setButtons(sendMessage);
