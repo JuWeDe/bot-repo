@@ -21,13 +21,14 @@ public class Model {
         this.humidity = humidity;
     }
 
-    public String getIcon() {
+    /*public String getIcon() {
         return icon;
     }
 
     public void setIcon(String icon) {
         this.icon = icon;
     }
+    */
 
     public String getMain() {
         return main;

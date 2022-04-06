@@ -15,8 +15,6 @@ public class Weather {
         while (input.hasNext()) {
             result += input.nextLine();
         }
-        //String result1 = result;
-
         JSONObject jsonObject = new JSONObject(result);
         model.setName(jsonObject.getString("name"));
 
