@@ -57,7 +57,7 @@ public class Bot extends TelegramLongPollingBot {
         try {
             setButtons(sendMessage);
             execute(sendMessage); //sendMessage(sendMessage)
-        } catch (Exception e) {
+        } catch (TelegramApiException e) {
             e.printStackTrace();
         }
     }
@@ -87,6 +87,6 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return "token";
+        return "5150552312:AAE5KwxvCt3rQtLOfTrlW8zpK2bJa8RsNNA";
     }
 }
