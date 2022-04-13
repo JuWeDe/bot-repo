@@ -1,3 +1,5 @@
+
+
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -14,6 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+// don't forget to add .jar file
 public class Bot extends TelegramLongPollingBot {
     public static void main(String[] args) throws TelegramApiException {
         ApiContextInitializer.init();

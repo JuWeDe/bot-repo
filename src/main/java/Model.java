@@ -21,6 +21,7 @@ public class Model {
         this.humidity = humidity;
     }
 
+    // TODO: add pictures to reply
     public String getIcon() {
         return icon;
     }

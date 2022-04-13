@@ -1,6 +1,5 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -24,6 +23,7 @@ public class Weather {
 
         JSONArray jsonArray = jsonObject.getJSONArray("weather");
 /*
+
         for (int i = 0; i < jsonArray.length(); i++) {
 
             JSONObject objectInArray = jsonArray.getJSONObject(1);
