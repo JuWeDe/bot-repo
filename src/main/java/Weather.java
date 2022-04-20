@@ -11,6 +11,7 @@ public class Weather {
         URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+ message + "&units=metric&appid=bf40dbd4c7098b41743f52c421f87d82");
         Scanner input = new Scanner((InputStream) url.getContent());
         String result = "";
+        System.out.println(url);
         while (input.hasNext()) {
             result += input.nextLine();
         }
@@ -21,9 +22,7 @@ public class Weather {
         model.setTemp(main.getDouble("temp"));
         model.setHumidity(main.getDouble("humidity"));
 
-        JSONArray jsonArray = jsonObject.getJSONArray("weather");
-/*
-
+        /*JSONArray jsonArray = jsonObject.getJSONArray("weather");
         for (int i = 0; i < jsonArray.length(); i++) {
 
             JSONObject objectInArray = jsonArray.getJSONObject(1);
@@ -31,11 +30,13 @@ public class Weather {
             model.setMain(objectInArray.getString("main"));
 
         }
-*/
+        */
 
-        return //"City: "+model.getName()+"\n" +
+
+        return "City: "+model.getName()+"\n" +
                 "Temp: "+model.getTemp() +" C" + "\n" +
-                        "Humidity: "+model.getHumidity()+"%"+"\n";
-//                +"Main: " + model.getMain()+"\n";
+                        "Humidity: "+model.getHumidity()+"%"+"\n"
+               +"Main: " + model.getMain()+"\n"
+        ;
     }
 }

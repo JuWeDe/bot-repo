@@ -49,8 +49,24 @@ public class Bot extends TelegramLongPollingBot {
                     }
             }
         }
-
     }
+        /*if (update.hasMessage() && update.getMessage().hasText()) {
+            String message = update.getMessage().getChatId().toString();
+            String chatId = update.getMessage().getChatId().toString();
+
+            SendMessage sender = new SendMessage();
+            sender.setChatId(chatId);
+            sender.setText(message);
+
+            try {
+                execute(sender);
+            }
+            catch (TelegramApiException e) {
+                // need logger
+                e.printStackTrace();
+            }
+        } */
+
     public void sendMes(Message message, String text) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
@@ -59,7 +75,7 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.setText(text);
         try {
             setButtons(sendMessage);
-            execute(sendMessage); //sendMessage(sendMessage)
+            sendMessage(sendMessage);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
