@@ -1,5 +1,4 @@
 
-
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -11,14 +10,13 @@ import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
-import javax.validation.groups.Default;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 // don't forget to add .jar file
 public class Bot extends TelegramLongPollingBot {
-    public static void main(String[] args) throws TelegramApiException {
+    public static void main(String[] args)  {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
@@ -40,6 +38,7 @@ public class Bot extends TelegramLongPollingBot {
                     break;
                 case "/gg":
                     sendMes(message, "Не будет");
+                    //sendSticker()
                     break;
                 default:
                     try {
@@ -66,7 +65,6 @@ public class Bot extends TelegramLongPollingBot {
                 e.printStackTrace();
             }
         } */
-
     public void sendMes(Message message, String text) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
@@ -75,9 +73,9 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.setText(text);
         try {
             setButtons(sendMessage);
-            sendMessage(sendMessage);
+            execute(sendMessage);
         } catch (TelegramApiException e) {
-            e.printStackTrace();
+            boolean isProblem = true;
         }
     }
     public void setButtons(SendMessage sendMessage) {
