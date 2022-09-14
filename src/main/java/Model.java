@@ -1,8 +1,12 @@
 public class Model {
+
+    private Double feelsTemp;
     private Double temp;
     private Double humidity;
     private String icon;
     private String main;
+    private String description;
+
     private String name;
 
     public Double getTemp() {
@@ -26,6 +30,14 @@ public class Model {
         return icon;
     }
 
+    public Double getFeelsTemp() {
+        return feelsTemp;
+    }
+
+    public void setFeelsTemp(Double feelsTemp) {
+        this.feelsTemp = feelsTemp;
+    }
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -45,5 +57,13 @@ public class Model {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

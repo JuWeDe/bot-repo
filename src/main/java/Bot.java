@@ -16,7 +16,7 @@ import java.util.List;
 
 // don't forget to add .jar file
 public class Bot extends TelegramLongPollingBot {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
@@ -25,46 +25,46 @@ public class Bot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
     public void onUpdateReceived(Update update) {
         Model model = new Model();
         Message message = update.getMessage();
         if (message != null && message.hasText()) {
             switch (message.getText()) {
                 case "/start":
-                    sendMes(message, "POGнали");
+                    sendMes(message, "Hi there! Just write me city name");
                     break;
                 case "/help":
-                    sendMes(message, "Писать только название города (eng or rus)");
-                    break;
-                case "/gg":
-                    sendMes(message, "Не будет");
-                    //sendSticker()
+                    sendMes(message, "This simple bot can send you info about weather.\nAll you need is to write city in english");
                     break;
                 default:
+
                     try {
-                        sendMes(message, Weather.getWeather(message.getText(), model));
+                        sendMes(message, WeatherStats.getWeather(message.getText(), model));
                     } catch (IOException e) {
-                        sendMes(message, "Город не найден!");
+                        throw new RuntimeException(e);
                     }
+
             }
         }
     }
-        /*if (update.hasMessage() && update.getMessage().hasText()) {
-            String message = update.getMessage().getChatId().toString();
-            String chatId = update.getMessage().getChatId().toString();
 
-            SendMessage sender = new SendMessage();
-            sender.setChatId(chatId);
-            sender.setText(message);
+    /*if (update.hasMessage() && update.getMessage().hasText()) {
+        String message = update.getMessage().getChatId().toString();
+        String chatId = update.getMessage().getChatId().toString();
 
-            try {
-                execute(sender);
-            }
-            catch (TelegramApiException e) {
-                // need logger
-                e.printStackTrace();
-            }
-        } */
+        SendMessage sender = new SendMessage();
+        sender.setChatId(chatId);
+        sender.setText(message);
+
+        try {
+            execute(sender);
+        }
+        catch (TelegramApiException e) {
+            // need logger
+            e.printStackTrace();
+        }
+    } */
     public void sendMes(Message message, String text) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
@@ -75,9 +75,10 @@ public class Bot extends TelegramLongPollingBot {
             setButtons(sendMessage);
             execute(sendMessage);
         } catch (TelegramApiException e) {
-            boolean isProblem = true;
+            //error caused by pulling "long" value into "int" variable in telegram Api
         }
     }
+
     public void setButtons(SendMessage sendMessage) {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
@@ -88,17 +89,16 @@ public class Bot extends TelegramLongPollingBot {
 
         List<KeyboardRow> keyboardRowList = new ArrayList<>();
         KeyboardRow keyboard1stRow = new KeyboardRow();
-        KeyboardRow keyboard2ndRow = new KeyboardRow();
+
         keyboard1stRow.add(new KeyboardButton("/start"));
         keyboard1stRow.add(new KeyboardButton("/help"));
-        keyboard2ndRow.add(new KeyboardButton("/gg"));
 
 
         keyboardRowList.add(keyboard1stRow);
-        keyboardRowList.add(keyboard2ndRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
 
     }
+
     public String getBotUsername() {
         return "BotName";
     }
