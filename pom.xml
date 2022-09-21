@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="windows-1251"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+    <Tg:project xmlns:Tg="http://maven.apache.org/POM/4.0.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <Tg:modelVersion>4.0.0</Tg:modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>TgBot1 (rework)</artifactId>
-    <version>1.0-SNAPSHOT</version>
+        <Tg:groupId>org.example</Tg:groupId>
+        <Tg:artifactId>TgBot1 (rework)</Tg:artifactId>
+        <Tg:version>1.0-SNAPSHOT</Tg:version>
 
-    <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-        <dependencies>
-            <dependency>
-                <groupId>org.telegram</groupId>
-                <artifactId>telegrambots</artifactId>
-                <version>5.7.1</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-nop -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-nop</artifactId>
-                <version>1.7.30</version>
-                <scope>test</scope>
-            </dependency>
+    <Tg:dependencies>
+        <Tg:dependency>
+            <Tg:groupId>org.projectlombok</Tg:groupId>
+            <Tg:artifactId>lombok</Tg:artifactId>
+            <Tg:version>1.18.24</Tg:version>
+        </Tg:dependency>
+        <Tg:dependency>
+            <Tg:groupId>org.telegram</Tg:groupId>
+            <Tg:artifactId>telegrambots</Tg:artifactId>
+            <Tg:version>6.1.0</Tg:version>
+        </Tg:dependency>
+
+        <!--
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        -->
+
+        <Tg:dependency>
+            <Tg:groupId>org.slf4j</Tg:groupId>
+            <Tg:artifactId>slf4j-nop</Tg:artifactId>
+            <Tg:version>1.7.30</Tg:version>
+            <Tg:scope>test</Tg:scope>
+        </Tg:dependency>
+    </Tg:dependencies>
 
 
-        </dependencies>
-    </properties>
+    <Tg:properties>
+        <Tg:maven.compiler.source>18</Tg:maven.compiler.source>
+        <Tg:maven.compiler.target>18</Tg:maven.compiler.target>
+        <Tg:project.build.sourceEncoding>UTF-8</Tg:project.build.sourceEncoding>
+    </Tg:properties>
 
-</project>
-
+</Tg:project>
