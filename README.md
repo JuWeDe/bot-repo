@@ -1,5 +1,4 @@
-# telegram-weatherBot-repo
-Long polling telegram weather bot
-- java 18 with maven dependencies
+# bot-repo
+Long polling tg weather bot
+- java 15 with maven depencies
 - used Telegram Bots API and OpenWeatherMap API
-- https://t.me/crntWeatherBot
