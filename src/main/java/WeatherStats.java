@@ -38,7 +38,23 @@ public class WeatherStats {
         for (int i = 0; i < weatherPart.length(); i++) {
             JSONObject objectInArray = weatherPart.getJSONObject(0); // zero for getting first example
             model.setDescription(objectInArray.getString("description"));
+
+            // more descriptions
             model.setMain(objectInArray.getString("main"));
+            if (model.getMain().equals("Rain")) {
+
+                Icon.WEATHER_DESCRIPTION.setValue(":cloud_rain:");
+            }
+            if (model.getMain().equals("Clear")) {
+
+                Icon.WEATHER_DESCRIPTION.setValue(":sunny:");
+            }
+            if (model.getMain().equals("Clouds")) {
+
+                Icon.WEATHER_DESCRIPTION.setValue(":cloud:");
+            }
+
+            // more emojis
             model.setIcon(objectInArray.getString("icon"));
         }
 
@@ -51,12 +67,18 @@ public class WeatherStats {
         System.out.println(weather.getHumidity());
 
          */
-        return "City: " + model.getName() + "\n" +
-                "Temp: " + model.getTemp() + " C\n" +
-                "Feels like: " + model.getFeelsTemp() + "\n" +
-                "Humidity: " + model.getHumidity() + "%\n" +
-                "Main: " + model.getMain() + "\n" +
-                "Description: " + model.getDescription() + "\n" +
+        return Icon.CITY.get() +
+                " City: " + model.getName() + "\n" +
+                Icon.THERMOMETER.get() +
+                " Temp: " + model.getTemp() + " C\n" +
+                Icon.FEELS_LIKE_TEMP.get() +
+                " Feels like: " + model.getFeelsTemp() + "\n" +
+                Icon.WEATHER_HUMIDITY.get() +
+                " Humidity: " + model.getHumidity() + "%\n" +
+                Icon.WEATHER_MAIN.get() +
+                " Main: " + model.getMain() + "\n" +
+                Icon.WEATHER_DESCRIPTION.get() +
+                " Description: " + model.getDescription() + "\n" +
                 "Icon: " + model.getIcon()
                 ;
     }

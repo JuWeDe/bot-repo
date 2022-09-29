@@ -1,6 +1,5 @@
-import java.util.List;
-
-@lombok.Data
+//@lombok.Data
+/*
 public class WeatherModel {
 
     public Coord coord;
@@ -17,13 +16,13 @@ public class WeatherModel {
     public String name;
     public Integer cod;
 
-    @lombok.Data
+    //@lombok.Data
     public static class Coord {
         public Double lon;
         public Double lat;
     }
 
-    @lombok.Data
+    //@lombok.Data
     public static class Weather {
 
         public Integer id;
@@ -32,7 +31,7 @@ public class WeatherModel {
         public String icon;
     }
 
-    @lombok.Data
+    //@lombok.Data
     public static class Main {
 
         public Double temp;
@@ -43,20 +42,20 @@ public class WeatherModel {
         public Integer humidity;
     }
 
-    @lombok.Data
+    //@lombok.Data
     public static class Wind {
 
         public Integer speed;
         public Integer deg;
     }
 
-    @lombok.Data
+    //@lombok.Data
     public static class Clouds {
 
         public Integer all;
     }
 
-    @lombok.Data
+    //@lombok.Data
     public static class Sys {
 
         public Integer type;
@@ -69,7 +68,7 @@ public class WeatherModel {
 }
 
 
-@lombok.Data
+//@lombok.Data
 class Weather {
 
     private Double temp;
@@ -84,9 +83,10 @@ class Weather {
                 .map(WeatherModel.Weather::getDescription).collect(Collectors.joining("; "));
         return result;
     }
-
+}
  */
 
-}
+
+
 
 
