@@ -13,7 +13,7 @@ public enum Icon {
 
     THERMOMETER(":thermometer:"),
     METRO(":metro:"),
-    WEATHER_DESCRIPTION("noEmoji"),
+    WEATHER_DESCRIPTION(":radio_button:"),
     FEELS_LIKE_TEMP(":thinking:");
 
     //add emoji here (java emoji)
