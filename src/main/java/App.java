@@ -10,6 +10,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class App {
     //private static final Logger logger = Logger.getLogger(App.class);
+    // new integration with IFTTT
 
 
     public static void main(String[] args ) throws TelegramApiException {
