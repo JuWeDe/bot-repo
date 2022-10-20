@@ -20,7 +20,6 @@ public class WeatherStats {
             result.append(input.nextLine());
         }
 
-        //Parsing v1.0
 
         JSONObject jsonObject = new JSONObject(result.toString());
         model.setName(jsonObject.getString("name"));
